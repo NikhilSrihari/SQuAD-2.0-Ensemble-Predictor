@@ -3,10 +3,12 @@ import numpy as np
 
 class EnsembleClassifier():
 
+
 	def __init__(self, type):
 		self.type = type
 
-	'''def predict(self, B_op, E_op, N_op):
+
+	def predict1(self, B_op, E_op, N_op):
 		final_op = {}
 		final_voter = {}
 		qIds = list(B_op.keys())
@@ -31,9 +33,10 @@ class EnsembleClassifier():
 			final_op[qId] = B_op[qId] if votesmaxindex==0 else (E_op[qId] if votesmaxindex==1 else N_op[qId])
 			final_voter[qId] =  { "maxVotes": "B" if votesmaxindex==0 else ("E" if votesmaxindex==1 else "N"),
 									"votes": votes }
-		return final_op, final_voter'''
+		return final_op, final_voter
 
-	def predict(self, B_op, E_op, N_op):
+
+	def predict2(self, B_op, E_op, N_op):
 		final_op = {}
 		final_voter = {}
 		qIds = list(B_op.keys())

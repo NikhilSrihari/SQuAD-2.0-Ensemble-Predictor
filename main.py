@@ -35,10 +35,14 @@ def main():
 	B_op, E_op, N_op = fetchModelsOP()
 	print("Starting Ensemble Classifier: ")
 	ec = EnsembleClassifier("MAX_VOTING")
-	final_op, final_voter = ec.predict(B_op, E_op, N_op)
-	writeJSON(final_op, "final_predictions")
-	writeJSON(final_voter, "final_predictionsVoter")
-	print("Predictions written to file final_predictions.json")
+	final_op1, final_voter1 = ec.predict1(B_op, E_op, N_op)
+	writeJSON(final_op1, "final_predictions1")
+	writeJSON(final_voter1, "final_predictionsVoter1")
+	print("Predictions written to file final_predictions1.json")
+	final_op2, final_voter2 = ec.predict2(B_op, E_op, N_op)
+	writeJSON(final_op2, "final_predictions2")
+	writeJSON(final_voter2, "final_predictionsVoter2")
+	print("Predictions written to file final_predictions2.json")
 
 
 main()
